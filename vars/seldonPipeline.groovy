@@ -6,21 +6,17 @@ def call() {
 
         stages {
             stage("Build") {
+                agent {
+                    docker {
+                        image: "python:3.9.12"
+                        reuseNode true
+                    }
+                }
                 steps {
                     script {
                         echo "Hello Build"
                     }
                 }
-                
-            }
-
-            stage("Deploy") {
-                steps {
-                    script {
-                        echo "Hello Deploy"
-                    }
-                }
-                
             }
         }
 
