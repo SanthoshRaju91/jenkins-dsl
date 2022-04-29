@@ -6,15 +6,21 @@ def call() {
 
         stages {
             stage("Build") {
-                script {
-                    echo "Hello Build"
+                steps {
+                    script {
+                        echo "Hello Build"
+                    }
                 }
+                
             }
 
             stage("Deploy") {
-                script {
-                    echo "Hello Deploy"
+                steps {
+                    script {
+                        echo "Hello Deploy"
+                    }
                 }
+                
             }
         }
 
